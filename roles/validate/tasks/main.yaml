@@ -1,0 +1,8 @@
+---
+- name: Set the test folder variable
+  set_fact:
+    test_folder: "{{playbook_dir}}/roles/validate/tests/"
+
+- name: Include the appropriate test file
+  include: "{{ test_folder }}/{{ test_name }}.yaml"
+

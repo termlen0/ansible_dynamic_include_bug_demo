@@ -1,0 +1,21 @@
+---
+- name: TEST DYNAMIC INCLUDES
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  roles:
+    - name: TEST ROLE1
+      role: test
+      tags:
+        - test1
+
+    - name: VALIDATE
+      role: validate
+      tags:
+        - validate
+
+    - name: TEST ROLE2
+      role: test
+      tags:
+        - test2
